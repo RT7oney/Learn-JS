@@ -1,0 +1,17 @@
+{
+  "name": "test-koa-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.4",
+    "koa": "^1.2.1",
+    "mongoose": "^4.5.10",
+    "request": "^2.74.0",
+  }
+}
