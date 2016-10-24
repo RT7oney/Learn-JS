@@ -1,0 +1,210 @@
+@import './_globals.scss';
+@import "node_modules/compass-mixins/lib/compass";
+@import "node_modules/compass-mixins/lib/animate";
+
+.layermbox {
+  position: relative;
+  z-index: 19891014;
+}
+
+.layermmain, .laymshade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layermbtn span, .layermchild {
+  display: inline-block;
+  position: relative;
+}
+
+.laymshade {
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: auto;
+}
+
+.layermmain {
+  display: table;
+  font-family: Helvetica , arial, sans-serif;
+  pointer-events: none;
+  .section {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.layermchild {
+  text-align: left;
+  background-color: #fff;
+  font-size: px2rem(14);
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  @include animation-fill-mode(both);
+  @include animation-duration(.18s);
+}
+
+.layermborder {
+  border: 1px solid #999;
+}
+
+.layermanim {
+  @include animation-name(bounceIn);
+}
+
+@include keyframes('bounceIn') {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.layermbox0 .layermchild {
+  max-width: px2rem(560);
+  width: 65%;
+}
+
+.layermbox1 .layermchild {
+  border: none;
+  border-radius: 0;
+}
+
+.layermbox2 .layermchild {
+  width: auto;
+  max-width: px2rem(260);
+  min-width: px2rem(40);
+  border: none;
+  background: 0 0;
+  box-shadow: none;
+  color: #fff;
+}
+
+.layermchild h3 {
+  text-align: center;
+  height: px2rem(40);
+  line-height: px2rem(40);
+  font-size: px2rem(15);
+  font-weight: 400;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.layermbtn span, .layermchild h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.layermcont {
+  padding: px2rem(20) px2rem(15);
+  line-height: px2rem(22);
+  text-align: center;
+}
+
+.layermbox1 .layermcont {
+  padding: 0;
+  text-align: left;
+}
+
+.layermbox2 .layermcont {
+  text-align: center;
+  padding: 0;
+  line-height: 0;
+  i {
+    width: px2rem(25);
+    height: px2rem(25);
+    margin-left: px2rem(8);
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 100%;
+    @include animation(bouncedelay 1.4s infinite ease-in-out);
+    @include animation-fill-mode(both);
+    &:first-child {
+      margin-left: 0;
+      @include animation-delay(-.32s);
+    }
+    &.laymloadtwo {
+      @include animation-delay(-.16s);
+    }
+  }
+  > div {
+    line-height: px2rem(22);
+    padding-top: px2rem(7);
+    margin-bottom: px2rem(20);
+    font-size: px2rem(14);
+  }
+}
+
+@include keyframes('bouncedelay') {
+  0%, 100%, 80% {
+    @include transform(scale(0));
+  }
+  40% {
+    @include transform(scale(1));
+  }
+}
+
+.layermbtn {
+  position: relative;
+  height: px2rem(40);
+  line-height: px2rem(40);
+  font-size: 0;
+  text-align: center;
+  border-top: 1px solid #EBEBEB;
+  span {
+    width: 50%;
+    text-align: center;
+    font-size: px2rem(14);
+    cursor: pointer;
+    border-radius: 0 3px 0 0;
+    height: 100%;
+    &:first-child {
+      background-color: #fff;
+      border-radius: 0 0 0 3px;
+    }
+    &:only-of-type {
+      width: 100%;
+    }
+  }
+  &:before {
+    content: '\20';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    background-color: #EBEBEB;
+  }
+}
+
+.layermend {
+  position: absolute;
+  right: px2rem(7);
+  top: px2rem(2);
+  width: px2rem(30);
+  height: px2rem(30);
+  border: 0;
+  background: 0 0;
+  &::after, &::before {
+    position: absolute;
+    left: px2rem(5);
+    top: px2rem(15);
+    content: '';
+    width: px2rem(18);
+    height: 1px;
+    background-color: #999;
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
