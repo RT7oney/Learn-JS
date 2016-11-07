@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>a-demo-of-vue</title>
+
+  <!-- 开启移动端手机屏适配 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- 禁止手机横屏：安卓下有效 -->
+  <meta name="x5-orientation" content="portrait">
+  <meta name="screen-orientation" content="portrait">
+
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <!-- 禁止移动端网页自动识别手机号码 -->
+  <meta name="format-detection" content="telephone=no">
+
+</head>
+
+<body>
+<!--header部分 begin-->
+<header>
+    <div class="head">
+      <div class="h-logs"></div>
+      <div class="h-right"></div>
+      <div class="nav-title">vue.js</div>
+    </div>
+</header>
+<!--header部分 end-->
+  <div id="app">
+    <router-view></router-view>
+  </div>
+<!--footer 部分  begin-->
+<div class="footer">
+    <div class="con">
+        <ul class="contact">
+          <li>客服电话&nbsp; 400-111-2222</li>
+          <li>周一至周日&nbsp;  8:00-20:00</li>
+        </ul>
+        <ul class="links">
+          <li><a href="">服务于支持</a></li>
+          <li><a href="">关于速柯</a></li>
+          <li><a href="">APP下载</a></li>
+        </ul>
+        <ul class="share">
+          <li class="wechat"></li>
+          <li class="sina"></li>
+        </ul>
+        <div class="clear"></div>
+        <p class="f">速珂智能 Copyright©2013-2015</p>
+    </div> 
+</div>
+  <!--footer 部分 end-->
+</body>
+</html>
