@@ -6,6 +6,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueCarbon from 'vue-carbon'
 import layer from './assets/js/layer'
+import echarts from "echarts"
 import 'vue-carbon/dist/vue-carbon.css' // 加载文件
 
 Vue.use(VueCarbon)
@@ -31,6 +32,12 @@ router.map({
     title: 'xiaohu',
     component(resolve) {
       require(['./components/demo/XiaoHu.vue'], resolve)
+    },
+  },
+  '/echart': {
+    title: 'Echart 测试',
+    component(resolve) {
+      require(['./components/demo/Chart.vue'], resolve)
     },
   },
 })

@@ -17,6 +17,7 @@
 var $data = {
   list: {
     '小虎': '/xiaohu',
+    'echart':'/echart'
   },
 }
 
